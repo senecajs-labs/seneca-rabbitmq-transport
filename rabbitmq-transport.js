@@ -1,11 +1,5 @@
 /* Copyright (c) 2014 Richard Rodger, MIT License */
-"use strict";
-
-
-var buffer = require('buffer')
-var util   = require('util')
-var net    = require('net')
-var stream = require('stream')
+'use strict';
 
 
 var _    = require('underscore')
@@ -19,16 +13,14 @@ module.exports = function( options ) {
 
   options = seneca.util.deepextend(
     {
-      redis: {
-        timeout:  so.timeout ? so.timeout-555 :  22222,
-        type:     'redis',
-        host:     'localhost',
-        port:     6379,
-      },
+      rabbitmq: {
+        type: 'rabbitmq',
+        url: 'amqp://localhost',
+        socketoptions: {}
+      }
     },
     so.transport,
     options)
-
 
   var tu = seneca.export('transport/utils')
 
@@ -41,7 +33,7 @@ module.exports = function( options ) {
     var type           = args.type
     var listen_options = seneca.util.clean(_.extend({},options[type],args))
 
-    amqp.connect('amqp://localhost', function (error, connection) {
+    amqp.connect(listen_options.url, listen_options.socketoptions, function (error, connection) {
       if (error) return done(error)
 
       connection.createChannel(function (error, channel) {
@@ -69,7 +61,7 @@ module.exports = function( options ) {
 
             // Publish
             tu.handle_request( seneca, data, listen_options, function(out){
-              if( null == out ) return;
+              if( null === out ) return;
               var outstr = tu.stringifyJSON( seneca, 'listen-'+type, out )
               channel.sendToQueue(restopic, new Buffer(outstr));
             })
@@ -98,11 +90,11 @@ module.exports = function( options ) {
     var type           = args.type
     var client_options = seneca.util.clean(_.extend({},options[type],args))
 
-    amqp.connect('amqp://localhost', function (error, connection) {
-      if (error) return done(error)
+    amqp.connect(client_options.url, client_options.socketoptions, function (error, connection) {
+      if (error) return client_done(error)
 
       connection.createChannel(function (error, channel) {
-        if (error) return done(error);
+        if (error) return client_done(error);
 
         tu.make_client( seneca, make_send, client_options, client_done )
 
