@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/senecajs/seneca-rabbitmq-transport.git"
+    "url": "git://github.com/rjrodger/seneca-rabbitmq-transport.git"
   },
   "bugs": {
-    "url": "https://github.com/senecajs/seneca-rabbitmq-transport/issues/new"
+    "url": "https://github.com/rjrodger/seneca-rabbitmq-transport/issues/new"
   },
   "keywords": [
     "seneca",
