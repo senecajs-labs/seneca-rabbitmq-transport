@@ -34,7 +34,7 @@
     "mocha": "~1.20.1",
     "seneca": "~0.5.21",
     "seneca-salestax": "^0.1.3",
-    "seneca-transport-test": "^0.1.2"
+    "seneca-transport-test": "https://github.com/wprl/seneca-transport-test.git#2f5c06a2638545ec5898ce4d1fb371c8b7134aa9"
   },
   "files": [
     "README.md",

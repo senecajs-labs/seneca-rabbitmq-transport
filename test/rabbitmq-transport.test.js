@@ -14,4 +14,8 @@ describe('rabbitmq-transport', function() {
     test.foo_pintest( 'rabbitmq-transport', require, fin, 'rabbitmq', -6379 )
   })
 
+  it('happy-multiple-origin', function( fin ) {
+    test.multiple_origin_test( 'rabbitmq-transport', require, fin, 'rabbitmq', -6379 )
+  })
+
 })
