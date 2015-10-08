@@ -19,12 +19,12 @@ module.exports = function( options ) {
 
   options = seneca.util.deepextend(
     {
-      redis: {
+      rabbitmq: {
         timeout:  so.timeout ? so.timeout-555 :  22222,
-        type:     'redis',
+        type:     'rabbitmq',
         host:     'localhost',
-        port:     6379,
-      },
+        port:     5672
+      }
     },
     so.transport,
     options)
@@ -144,6 +144,6 @@ module.exports = function( options ) {
   }
 
   return {
-    name: plugin,
+    name: plugin
   }
 }
