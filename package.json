@@ -4,7 +4,8 @@
   "description": "Seneca RabbitMQ transport",
   "main": "rabbitmq-transport.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/*.test.js"
+    "test": "node_modules/.bin/mocha test/*.test.js",
+    "setup-test": "./setup.sh"
   },
   "repository": {
     "type": "git",
