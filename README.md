@@ -1,3 +1,5 @@
+https://travis-ci.org/piccoloaiutante/seneca-rabbitmq-transport.svg?branch=master
+
 seneca-rabbitmq-transport
 ======================
 
