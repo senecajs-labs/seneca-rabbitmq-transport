@@ -29,7 +29,6 @@ module.exports = function( options ) {
     so.transport,
     options)
 
-
   var tu = seneca.export('transport/utils')
 
   seneca.add({role:'transport',hook:'listen',type:'rabbitmq'}, hook_listen_rabbitmq)
@@ -41,7 +40,7 @@ module.exports = function( options ) {
     var type           = args.type
     var listen_options = seneca.util.clean(_.extend({},options[type],args))
 
-    amqp.connect('amqp://localhost', function (error, connection) {
+    amqp.connect('amqp://'+options.rabbitmq.host, function (error, connection) {
       if (error) return done(error)
 
       connection.createChannel(function (error, channel) {
@@ -98,7 +97,7 @@ module.exports = function( options ) {
     var type           = args.type
     var client_options = seneca.util.clean(_.extend({},options[type],args))
 
-    amqp.connect('amqp://localhost', function (error, connection) {
+    amqp.connect('amqp://'+options.rabbitmq.host, function (error, connection) {
       if (error) return done(error)
 
       connection.createChannel(function (error, channel) {
