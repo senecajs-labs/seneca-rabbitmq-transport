@@ -2,10 +2,14 @@
 'use strict'
 
 var assert = require('assert')
-var async = require('async')
+var Lab = require('lab')
+var lab = exports.lab = Lab.script()
+
+var describe = lab.describe
+var it = lab.it
 
 var seneca = require('seneca')()
-  .use('rabbitmq-transport')
+  .use('../')
   .use('salestax', {
     country: {
       'FR': 0.20,

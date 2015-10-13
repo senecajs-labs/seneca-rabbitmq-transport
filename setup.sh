@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 docker-machine start default;
 docker pull rabbitmq;
 docker run -d --hostname my-rabbit --name seneca-rabbit -p 5672:5672 rabbitmq;
