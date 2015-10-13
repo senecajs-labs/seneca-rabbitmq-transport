@@ -17,5 +17,4 @@ describe('rabbitmq-transport', function () {
   it('happy-pin', function (fin) {
     test.foo_pintest('rabbitmq-transport', require, fin, 'rabbitmq', -6379)
   })
-
 })

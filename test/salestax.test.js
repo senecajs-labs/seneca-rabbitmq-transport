@@ -172,5 +172,4 @@ describe('salestax', function () {
       done()
     })
   })
-
 })

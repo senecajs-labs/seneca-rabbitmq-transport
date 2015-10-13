@@ -24,8 +24,8 @@ module.exports = function (options) {
 
   var tu = seneca.export('transport/utils')
 
-  seneca.add({role: 'transport',hook: 'listen',type: 'rabbitmq'}, hook_listen_rabbitmq)
-  seneca.add({role: 'transport',hook: 'client',type: 'rabbitmq'}, hook_client_rabbitmq)
+  seneca.add({role: 'transport', hook: 'listen', type: 'rabbitmq'}, hook_listen_rabbitmq)
+  seneca.add({role: 'transport', hook: 'client', type: 'rabbitmq'}, hook_client_rabbitmq)
 
   function hook_listen_rabbitmq (args, done) {
     var seneca = this
@@ -60,7 +60,7 @@ module.exports = function (options) {
 
             // Publish
             tu.handle_request(seneca, data, listen_options, function (out) {
-              if (null == out) return
+              if (out == null) return
               var outstr = tu.stringifyJSON(seneca, 'listen-' + type, out)
               channel.sendToQueue(restopic, new Buffer(outstr))
             })
@@ -87,10 +87,10 @@ module.exports = function (options) {
     var client_options = seneca.util.clean(_.extend({}, options[type], args))
 
     amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
-      if (error) return done(error)
+      if (error) return client_done(error)
 
       connection.createChannel(function (error, channel) {
-        if (error) return done(error)
+        if (error) return client_done(error)
 
         tu.make_client(seneca, make_send, client_options, client_done)
 
@@ -125,7 +125,6 @@ module.exports = function (options) {
             connection.close()
             closer.prior(close_args, done)
           })
-
         }
       })
     })
