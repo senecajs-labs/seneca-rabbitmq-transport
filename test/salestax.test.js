@@ -1,12 +1,15 @@
 /* Copyright (c) 2010-2014 Nearform */
-"use strict";
+'use strict'
 
 var assert = require('assert')
-var async = require('async')
+var Lab = require('lab')
+var lab = exports.lab = Lab.script()
 
+var describe = lab.describe
+var it = lab.it
 
 var seneca = require('seneca')()
-  .use('rabbitmq-transport')
+  .use('../')
   .use('salestax', {
     country: {
       'FR': 0.20,
@@ -37,16 +40,14 @@ var seneca = require('seneca')()
     }
   })
 
-
 describe('salestax', function () {
-
   it('happy', function (done) {
     seneca.act({
       role: 'salestax',
       cmd: 'salestax',
       net: 100,
       country: 'FR'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 20)
@@ -62,7 +63,7 @@ describe('salestax', function () {
       cmd: 'salestax',
       net: 100,
       country: 'UK'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 20)
@@ -79,7 +80,7 @@ describe('salestax', function () {
       net: 100,
       country: 'UK',
       category: 'child'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 5)
@@ -96,7 +97,7 @@ describe('salestax', function () {
       net: 100,
       country: 'UK',
       category: 'does not exist'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 20)
@@ -113,7 +114,7 @@ describe('salestax', function () {
       net: 100,
       country: 'IE',
       category: 'does not exist'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 0)
@@ -129,7 +130,7 @@ describe('salestax', function () {
       cmd: 'salestax',
       net: 100,
       country: 'IE'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err, err)
       assert.ok(result)
       assert.equal(result.tax, 0)
@@ -145,7 +146,7 @@ describe('salestax', function () {
       cmd: 'salestax',
       net: 100,
       country: 'USA'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err)
       assert.ok(result)
       assert.equal(result.tax, 0)
@@ -162,7 +163,7 @@ describe('salestax', function () {
       net: 100,
       country: 'USA',
       state: 'AK'
-    }, function(err, result) {
+    }, function (err, result) {
       assert.ok(!err)
       assert.ok(result)
       assert.equal(result.tax, 0)
@@ -171,5 +172,4 @@ describe('salestax', function () {
       done()
     })
   })
-
 })

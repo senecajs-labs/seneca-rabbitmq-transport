@@ -1,9 +1,8 @@
-
 require('seneca')()
   .use('..')
-  .client({type:'rabbitmq'})
-  .listen({type:'rabbitmq'})
+  .client({type: 'rabbitmq'})
+  .listen({type: 'rabbitmq'})
 
-  .ready(function(){
-    console.log( this.list() )
+  .ready(function () {
+    console.log(this.list())
   })

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/piccoloaiutante/seneca-rabbitmq-transport.svg?branch=master)](https://travis-ci.org/piccoloaiutante/seneca-rabbitmq-transport)
+
 seneca-rabbitmq-transport
 ======================
 
