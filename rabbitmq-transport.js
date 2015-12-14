@@ -109,6 +109,7 @@ module.exports = function (options) {
           channel.consume(restopic, function (message) {
             var content = message.content ? message.content.toString() : undefined
             var input = tu.parseJSON(seneca, 'client-' + type, content)
+            channel.ack(message)
             tu.handle_response(seneca, input, client_options)
           })
 
