@@ -58,8 +58,8 @@ documentation, examples, extra testing, or new features please get in touch.
 ## License
 Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
 
-[travis-badge]: https://travis-ci.org/piccoloaiutante/seneca-rabbitmq-transport.svg?branch=master
-[travis-url]: https://travis-ci.org/piccoloaiutante/seneca-rabbitmq-transport
+[travis-badge]: https://travis-ci.org/senecajs/seneca-rabbitmq-transport.svg?branch=master
+[travis-url]: https://travis-ci.org/senecajs/seneca-rabbitmq-transport
 [gitter-badge]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/senecajs/seneca
 
