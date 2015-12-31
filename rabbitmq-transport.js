@@ -86,11 +86,11 @@ module.exports = function (options) {
     var type = args.type
     var client_options = seneca.util.clean(_.extend({}, options[type], args))
 
-    Amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
-      if (error) return client_done(error)
+    Amqp.connect('amqp://' + options.rabbitmq.host, function (err, connection) {
+      if (err) return client_done(err)
 
-      connection.createChannel(function (error, channel) {
-        if (error) return client_done(error)
+      connection.createChannel(function (err, channel) {
+        if (err) return client_done(err)
 
         tu.make_client(seneca, make_send, client_options, client_done)
 
