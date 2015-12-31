@@ -2,15 +2,15 @@
 > A [Seneca.js][] transport plugin.
 
 # seneca-rabbitmq-transport
+[![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
-[![Gitter][gitter-badge]][gitter-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
+[![Dependency Status][david-badge]][david-url]
+[![Gitter chat][gitter-badge]][gitter-url]
 
 A micro-services message transport over RabbitMQ
 
-- __Version:__ 0.2.1
-- __Tested on:__ Seneca 0.9
-- __Node:__ 0.10, 0.12, 4, 5
-- __License:__ [MIT][]
+## About
 
 seneca-rabbitmq-transport's source can be read in an annotated fashion by,
 
@@ -58,9 +58,15 @@ documentation, examples, extra testing, or new features please get in touch.
 ## License
 Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
 
-[travis-badge]: https://travis-ci.org/senecajs/seneca-rabbitmq-transport.svg?branch=master
+[npm-badge]: https://img.shields.io/npm/v/seneca-rabbitmq-transport.svg
+[npm-url]: https://npmjs.com/package/seneca-rabbitmq-transport
+[travis-badge]: https://api.travis-ci.org/senecajs/seneca-rabbitmq-transport.svg
 [travis-url]: https://travis-ci.org/senecajs/seneca-rabbitmq-transport
-[gitter-badge]: https://badges.gitter.im/Join%20Chat.svg
+[coveralls-badge]:https://coveralls.io/repos/senecajs/seneca-rabbitmq-transport/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/senecajs/seneca-rabbitmq-transport?branch=master
+[david-badge]: https://david-dm.org/senecajs/seneca-rabbitmq-transport.svg
+[david-url]: https://david-dm.org/senecajs/seneca-rabbitmq-transport
+[gitter-badge]: https://badges.gitter.im/senecajs/seneca.svg
 [gitter-url]: https://gitter.im/senecajs/seneca
 
 [MIT]: ./LICENSE
