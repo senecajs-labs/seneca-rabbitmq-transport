@@ -1,12 +1,13 @@
 /* Copyright (c) 2010-2014 Nearform */
 'use strict'
 
-var assert = require('assert')
 var Lab = require('lab')
-var lab = exports.lab = Lab.script()
+var Code = require('code')
 
+var lab = exports.lab = Lab.script()
 var describe = lab.describe
 var it = lab.it
+var expect = Code.expect
 
 var seneca = require('seneca')()
   .use('../')
@@ -48,11 +49,11 @@ describe('salestax', function () {
       net: 100,
       country: 'FR'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 20)
-      assert.equal(result.rate, 0.20)
-      assert.equal(result.total, 120)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(20)
+      expect(result.rate).to.equal(0.20)
+      expect(result.total).to.equal(120)
       done()
     })
   })
@@ -64,11 +65,11 @@ describe('salestax', function () {
       net: 100,
       country: 'UK'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 20)
-      assert.equal(result.rate, 0.20)
-      assert.equal(result.total, 120)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(20)
+      expect(result.rate).to.equal(0.20)
+      expect(result.total).to.equal(120)
       done()
     })
   })
@@ -81,11 +82,11 @@ describe('salestax', function () {
       country: 'UK',
       category: 'child'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 5)
-      assert.equal(result.rate, 0.05)
-      assert.equal(result.total, 105)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(5)
+      expect(result.rate).to.equal(0.05)
+      expect(result.total).to.equal(105)
       done()
     })
   })
@@ -98,11 +99,11 @@ describe('salestax', function () {
       country: 'UK',
       category: 'does not exist'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 20)
-      assert.equal(result.rate, 0.20)
-      assert.equal(result.total, 120)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(20)
+      expect(result.rate).to.equal(0.20)
+      expect(result.total).to.equal(120)
       done()
     })
   })
@@ -115,11 +116,11 @@ describe('salestax', function () {
       country: 'IE',
       category: 'does not exist'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 0)
-      assert.equal(result.rate, 0)
-      assert.equal(result.total, 100)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(0)
+      expect(result.rate).to.equal(0)
+      expect(result.total).to.equal(100)
       done()
     })
   })
@@ -131,11 +132,11 @@ describe('salestax', function () {
       net: 100,
       country: 'IE'
     }, function (err, result) {
-      assert.ok(!err, err)
-      assert.ok(result)
-      assert.equal(result.tax, 0)
-      assert.equal(result.rate, 0)
-      assert.equal(result.total, 100)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(0)
+      expect(result.rate).to.equal(0)
+      expect(result.total).to.equal(100)
       done()
     })
   })
@@ -147,11 +148,11 @@ describe('salestax', function () {
       net: 100,
       country: 'USA'
     }, function (err, result) {
-      assert.ok(!err)
-      assert.ok(result)
-      assert.equal(result.tax, 0)
-      assert.equal(result.rate, 0)
-      assert.equal(result.total, 100)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(0)
+      expect(result.rate).to.equal(0)
+      expect(result.total).to.equal(100)
       done()
     })
   })
@@ -164,11 +165,11 @@ describe('salestax', function () {
       country: 'USA',
       state: 'AK'
     }, function (err, result) {
-      assert.ok(!err)
-      assert.ok(result)
-      assert.equal(result.tax, 0)
-      assert.equal(result.rate, 0)
-      assert.equal(result.total, 100)
+      expect(err).to.not.exist()
+      expect(result).to.exist()
+      expect(result.tax).to.equal(0)
+      expect(result.rate).to.equal(0)
+      expect(result.total).to.equal(100)
       done()
     })
   })

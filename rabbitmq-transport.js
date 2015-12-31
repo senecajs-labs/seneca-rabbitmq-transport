@@ -1,8 +1,8 @@
 /* Copyright (c) 2014 Richard Rodger, MIT License */
 'use strict'
 
-var _ = require('underscore')
-var amqp = require('amqplib/callback_api')
+var _ = require('lodash')
+var Amqp = require('amqplib/callback_api')
 
 module.exports = function (options) {
   var seneca = this
@@ -32,7 +32,7 @@ module.exports = function (options) {
     var type = args.type
     var listen_options = seneca.util.clean(_.extend({}, options[type], args))
 
-    amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
+    Amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
       if (error) return done(error)
 
       connection.createChannel(function (error, channel) {
@@ -86,11 +86,11 @@ module.exports = function (options) {
     var type = args.type
     var client_options = seneca.util.clean(_.extend({}, options[type], args))
 
-    amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
-      if (error) return client_done(error)
+    Amqp.connect('amqp://' + options.rabbitmq.host, function (err, connection) {
+      if (err) return client_done(err)
 
-      connection.createChannel(function (error, channel) {
-        if (error) return client_done(error)
+      connection.createChannel(function (err, channel) {
+        if (err) return client_done(err)
 
         tu.make_client(seneca, make_send, client_options, client_done)
 
