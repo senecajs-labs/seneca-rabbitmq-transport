@@ -1,4 +1,12 @@
+language: node_js
 sudo: required
+
+node_js:
+  - '5'
+  - '4'
+  - '0.12'
+  - '0.10'
+
 before_install:
  - echo "deb http://www.rabbitmq.com/debian/ testing main"  | sudo tee  /etc/apt/sources.list.d/rabbitmq.list > /dev/null
  - sudo wget http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
@@ -8,8 +16,6 @@ before_install:
  - sudo service rabbitmq-server start
  - sudo rabbitmq-plugins enable rabbitmq_management
  - sudo service rabbitmq-server restart
-language: node_js
-node_js:
-  - 0.10
-  - 0.12
-  - 4.0
+
+after_script:
+  npm run coverage
