@@ -2,7 +2,7 @@
 'use strict'
 
 var _ = require('lodash')
-var amqp = require('amqplib/callback_api')
+var Amqp = require('amqplib/callback_api')
 
 module.exports = function (options) {
   var seneca = this
@@ -32,7 +32,7 @@ module.exports = function (options) {
     var type = args.type
     var listen_options = seneca.util.clean(_.extend({}, options[type], args))
 
-    amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
+    Amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
       if (error) return done(error)
 
       connection.createChannel(function (error, channel) {
@@ -86,7 +86,7 @@ module.exports = function (options) {
     var type = args.type
     var client_options = seneca.util.clean(_.extend({}, options[type], args))
 
-    amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
+    Amqp.connect('amqp://' + options.rabbitmq.host, function (error, connection) {
       if (error) return client_done(error)
 
       connection.createChannel(function (error, channel) {

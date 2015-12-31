@@ -5,7 +5,7 @@
   "main": "rabbitmq-transport.js",
   "scripts": {
     "test": "lab -r console -v -L -m 3000 -t 92",
-    "lint": "lab -P -dL",
+    "lint": "lab -dL",
     "coverage": "lab -s test/*test.js  -r lcov | coveralls",
     "setup-test": "./setup.sh",
     "annotate": "docco rabbitmq-transport.js -o doc"

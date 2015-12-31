@@ -3,6 +3,6 @@
 
 // node fault.js
 
-var test = require('seneca-transport-test')
+var Test = require('seneca-transport-test')
 
-test.foo_fault(require, 'rabbitmq')
+Test.foo_fault(require, 'rabbitmq')
