@@ -29,18 +29,18 @@
   "license": "MIT",
   "dependencies": {
     "amqplib": "0.4.0",
-    "underscore": "1.8.3"
+    "lodash": "^3.10.1"
   },
   "peerDependencies": {
     "seneca": "*"
   },
   "devDependencies": {
-    "async": "1.4.2",
+    "async": "1.5.0",
     "code": "^1.5.0",
     "coveralls": "^2.11.6",
     "docco": "0.7.0",
     "eslint-config-seneca": "1.x.x",
-    "eslint-plugin-hapi": "2.x.x",
+    "eslint-plugin-hapi": "4.x.x",
     "eslint-plugin-standard": "1.x.x",
     "lab": "6.2.0",
     "seneca": "plugin",

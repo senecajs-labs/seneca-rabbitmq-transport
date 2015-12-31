@@ -1,7 +1,7 @@
 /* Copyright (c) 2014 Richard Rodger, MIT License */
 'use strict'
 
-var _ = require('underscore')
+var _ = require('lodash')
 var amqp = require('amqplib/callback_api')
 
 module.exports = function (options) {
