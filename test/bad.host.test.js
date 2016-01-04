@@ -24,13 +24,23 @@ var internals = {
 describe('rabbitmq-transport', function () {
   test('wrong server host', function (fin) {
     var cc = 0
-    var seneca_srv = require('seneca')({log: 'silent', debug: {undead: true}, errhandler: function (err) {
-      expect('seneca: Action hook:listen,role:transport,type:rabbitmq failed: getaddrinfo ENOTFOUND somehost.').to.equal(err.message)
-      cc++ && fin()
-    }})
+    var seneca_srv = require('seneca')({
+      log: 'silent',
+      debug: {undead: true},
+      errhandler: function (err) {
+        cc++
+        if (cc === 2) {
+          service.close(fin)
+        }
+        else if (cc === 1) {
+          expect('seneca: Action hook:listen,role:transport,type:rabbitmq failed: getaddrinfo ENOTFOUND somehost somehost:5672.').to.equal(err.message)
+        }
+      },
+      timeout: 111
+    })
       .use(RabbitmqTransport, {rabbitmq: {host: 'somehost'}})
 
-    foo_service(seneca_srv)
+    var service = foo_service(seneca_srv)
   })
 
   test('wrong client host', function (fin) {
@@ -40,11 +50,20 @@ describe('rabbitmq-transport', function () {
     var service = foo_service(seneca_srv)
 
     service.ready(function () {
+      var cc = 0
       var seneca_client = require('seneca')({
-        log: 'silent', debug: {undead: true}, errhandler: function (err) {
-          expect('seneca: Action hook:client,role:transport,type:rabbitmq failed: getaddrinfo ENOTFOUND somehost.').to.equal(err.message)
-          foo_close(client, service, fin)
-        }, timeout: 111
+        log: 'silent',
+        debug: {undead: true},
+        errhandler: function (err) {
+          cc++
+          if (cc === 2) {
+            foo_close(client, service, fin)
+          }
+          else if (cc === 1) {
+            expect('seneca: Action hook:client,role:transport,type:rabbitmq failed: getaddrinfo ENOTFOUND somehost somehost:5672.').to.equal(err.message)
+          }
+        },
+        timeout: 111
       })
         .use(RabbitmqTransport, {rabbitmq: {host: 'somehost'}})
 
@@ -66,6 +85,7 @@ function foo_service (seneca) {
     .use(foo_plugin)
     .listen({type: type, port: (port < 0 ? -1 * port : port)})
 }
+
 
 function foo_run (seneca) {
   var type = internals.defaults['rabbitmq'].type
