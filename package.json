@@ -4,7 +4,7 @@
   "description": "Seneca RabbitMQ transport",
   "main": "rabbitmq-transport.js",
   "scripts": {
-    "test": "lab -r console -v -L -m 3000 -t 93",
+    "test": "lab -r console -v -L -m 3000 -t 95",
     "lint": "lab -dL",
     "coverage": "lab -s test/*test.js  -r lcov | coveralls",
     "setup-test": "./setup.sh",
