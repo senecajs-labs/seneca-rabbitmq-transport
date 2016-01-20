@@ -1,5 +1,6 @@
-![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
-> A [Seneca.js][] transport plugin.
+## Recommendation
+
+We are considering retiring this module in favor of https://github.com/disintegrator/seneca-amqp-transport  Please take a look and let us know your thoughts by creating an issue.
 
 # seneca-rabbitmq-transport
 [![npm version][npm-badge]][npm-url]
