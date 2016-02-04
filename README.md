@@ -1,8 +1,11 @@
+![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
+> A [Seneca.js](https://github.com/senecajs/) a seneca-auth plugin
+
 ## Recommendation
 
 We are considering retiring this module in favor of https://github.com/disintegrator/seneca-amqp-transport  Please take a look and let us know your thoughts by creating an issue.
 
-# seneca-rabbitmq-transport
+## seneca-rabbitmq-transport
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
@@ -16,7 +19,7 @@ A micro-services message transport over RabbitMQ
 seneca-rabbitmq-transport's source can be read in an annotated fashion by,
 
 - running `npm run annotate`
-- viewing[online](http://htmlpreview.github.com/?http://github.com/senecajs/seneca-rabbitmq-transport/doc/rabbitmq-transport.html).
+- viewing[online] (http://htmlpreview.github.com/?https://github.com/matthewoconnor-development/seneca-rabbitmq-transport/blob/master/doc/rabbitmq-transport.html).
 
 The annotated source can be found locally by clicking [here][].
 
