@@ -72,7 +72,7 @@ Copyright Richard Rodger and other contributors 2016, Licensed under [MIT][].
 [david-url]: https://david-dm.org/senecajs/seneca-rabbitmq-transport
 [gitter-badge]: https://badges.gitter.im/senecajs/seneca.svg
 [gitter-url]: https://gitter.im/senecajs/seneca
-[online]: http://htmlpreview.github.com/?https://github.com/matthewoconnor-development/seneca-rabbitmq-transport/blob/master/doc/rabbitmq-transport.html
+[online]: http://htmlpreview.github.com/?https://github.com/senecajs/seneca-rabbitmq-transport/blob/master/doc/rabbitmq-transport.html
 [MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
