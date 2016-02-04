@@ -16,9 +16,9 @@ A micro-services message transport over RabbitMQ
 seneca-rabbitmq-transport's source can be read in an annotated fashion by,
 
 - running `npm run annotate`
-- viewing [online](http://github.com/senecajs/seneca-rabbitmq-transport/doc/rabbitmq-transport.html).
+- viewing[online](http://htmlpreview.github.com/?http://github.com/senecajs/seneca-rabbitmq-transport/doc/rabbitmq-transport.html).
 
-The annotated source can be found locally at [./doc/rabbitmq-transport.html]().
+The annotated source can be found locally by clicking [here][].
 
 If you're using this module, and need help, you can:
 
@@ -57,7 +57,7 @@ The [Senecajs org][] encourage open participation. If you feel you can help in a
 documentation, examples, extra testing, or new features please get in touch.
 
 ## License
-Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
+Copyright Richard Rodger and other contributors 2016, Licensed under [MIT][].
 
 [npm-badge]: https://img.shields.io/npm/v/seneca-rabbitmq-transport.svg
 [npm-url]: https://npmjs.com/package/seneca-rabbitmq-transport
@@ -76,4 +76,4 @@ Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
 [senecajs.org]: http://senecajs.org/
 [github issue]: https://github.com/senecajs/seneca-rabbitmq-transport/issues
 [@senecajs]: http://twitter.com/senecajs
-
+[here]: ./doc/rabbitmq-transport.html
