@@ -1,8 +1,11 @@
+![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
+> A [Seneca.js](https://github.com/senecajs/) a seneca-auth plugin
+
 ## Recommendation
 
 We are considering retiring this module in favor of https://github.com/disintegrator/seneca-amqp-transport  Please take a look and let us know your thoughts by creating an issue.
 
-# seneca-rabbitmq-transport
+## seneca-rabbitmq-transport
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
@@ -16,9 +19,9 @@ A micro-services message transport over RabbitMQ
 seneca-rabbitmq-transport's source can be read in an annotated fashion by,
 
 - running `npm run annotate`
-- viewing [online](http://github.com/senecajs/seneca-rabbitmq-transport/doc/rabbitmq-transport.html).
+- viewing [online][].
 
-The annotated source can be found locally at [./doc/rabbitmq-transport.html]().
+The annotated source can be found locally by clicking [here][].
 
 If you're using this module, and need help, you can:
 
@@ -57,7 +60,7 @@ The [Senecajs org][] encourage open participation. If you feel you can help in a
 documentation, examples, extra testing, or new features please get in touch.
 
 ## License
-Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
+Copyright Richard Rodger and other contributors 2016, Licensed under [MIT][].
 
 [npm-badge]: https://img.shields.io/npm/v/seneca-rabbitmq-transport.svg
 [npm-url]: https://npmjs.com/package/seneca-rabbitmq-transport
@@ -69,11 +72,11 @@ Copyright Richard Rodger and other contributors 2015, Licensed under [MIT][].
 [david-url]: https://david-dm.org/senecajs/seneca-rabbitmq-transport
 [gitter-badge]: https://badges.gitter.im/senecajs/seneca.svg
 [gitter-url]: https://gitter.im/senecajs/seneca
-
+[online]: http://htmlpreview.github.com/?https://github.com/senecajs/seneca-rabbitmq-transport/blob/master/doc/rabbitmq-transport.html
 [MIT]: ./LICENSE
 [Senecajs org]: https://github.com/senecajs/
 [Seneca.js]: https://www.npmjs.com/package/seneca
 [senecajs.org]: http://senecajs.org/
 [github issue]: https://github.com/senecajs/seneca-rabbitmq-transport/issues
 [@senecajs]: http://twitter.com/senecajs
-
+[here]: ./doc/rabbitmq-transport.html
