@@ -12,6 +12,9 @@ We are considering retiring this module in favor of https://github.com/disintegr
 [![Dependency Status][david-badge]][david-url]
 [![Gitter chat][gitter-badge]][gitter-url]
 
+| ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
+|---|---|
+
 A micro-services message transport over RabbitMQ
 
 ## About
